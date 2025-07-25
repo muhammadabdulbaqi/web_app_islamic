@@ -1,0 +1,46 @@
+name: Build and Deploy FastAPI App to Azure - good-habits-io
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - name: Install dependencies with Poetry
+        run: |
+          poetry install
+
+      - name: Prepare deployment package
+        run: |
+          mkdir output
+          cp -R * output/
+          rm -rf output/venv
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v2
+        with:
+          app-name: 'good-habits-io'
+          slot-name: 'Production'
+          package: output
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
