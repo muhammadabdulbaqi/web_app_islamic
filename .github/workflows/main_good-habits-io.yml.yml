@@ -34,8 +34,7 @@ jobs:
       - name: Prepare deployment package
         run: |
           mkdir output
-          cp -R * output/
-          rm -rf output/venv
+          rsync -av --exclude 'output' ./ output/
 
       - name: Deploy to Azure Web App
         uses: azure/webapps-deploy@v2
