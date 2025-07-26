@@ -1,6 +1,6 @@
 # Islamic Web App
 
----
+* Prayer Times: Display accurate daily prayer times based on user location.
 
 ## Next Steps: Enhancing the Islamic Web App
 
@@ -8,7 +8,6 @@ We plan to continue building on this foundation with the following features:
 
 ### Core Features to Add
 
-* Prayer Times: Display accurate daily prayer times based on user location.
 * Qur'an Viewer: Let users read the Qur'an in Arabic and English, with bookmarking and navigation.
 * Hadith of the Day: Show a rotating daily hadith from authentic collections.
 
