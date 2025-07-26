@@ -10,15 +10,26 @@
 
   <main>
     <h1>Prayer Times</h1>
-    <div id="prayer-times">Loading prayer times...</div>
+
+    <div>
+      <input id="address-input" type="text" placeholder="Enter city or address">
+      <button id="load-times">Load Prayer Times</button>
+    </div>
+
+    <div id="selected-city" style="margin-top: 10px;"></div>
+
+    <section id="next-prayer">
+      <!-- Next prayer details will load here -->
+    </section>
+
+    <section id="prayer-times">
+      <!-- Prayer times will load here -->
+    </section>
   </main>
 
   <div id="footer"></div>
 
-  <!-- Shared layout loader -->
   <script src="/static/partials/include.js"></script>
-
-  <!-- Page-specific logic -->
   <script src="/static/js/prayer_times.js"></script>
 </body>
 </html>

@@ -31,3 +31,14 @@ footer {
   background-color: #eee;
   margin-top: 2em;
 }
+
+.highlight-box {
+  border: 2px solid #2c3e50;
+  background-color: #eef6f9;
+  padding: 1.5em;
+  margin-top: 1.5em;
+  text-align: center;
+  font-size: 1.3em;
+  border-radius: 8px;
+}
+
