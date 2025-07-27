@@ -3,7 +3,7 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 import os
 
-from app.routes import prayer_times  
+from app.routes import prayer_times, quran 
 
 app = FastAPI()
 
@@ -25,3 +25,4 @@ async def html_page(page_name: str):
 
 # Include the prayer times router
 app.include_router(prayer_times.router)
+app.include_router(quran.router)

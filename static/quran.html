@@ -10,11 +10,19 @@
 
   <main>
     <h1>Qur'an Viewer</h1>
-    <p>This page will let users read the Qur'an.</p>
+
+    <label for="surah-select">Select Surah:</label>
+    <select id="surah-select">
+      <option value="">Loading...</option>
+    </select>
+
+    <div id="surah-info" style="margin-top: 1em;"></div>
+    <div id="verses" style="margin-top: 2em;"></div>
   </main>
 
   <div id="footer"></div>
 
   <script src="/static/partials/include.js"></script>
+  <script src="/static/js/quran.js"></script>
 </body>
 </html>
